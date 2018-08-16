@@ -1,0 +1,35 @@
+.container {
+  max-width: 120rem;
+  // trick to center the container into its parent element
+  margin: 8rem auto;
+  background-color: var(--color-grey-light-2);
+  box-shadow: var(--shadow-dark);
+
+  min-height: 50rem;
+
+}
+
+.header {
+  height: 7rem;
+  background-color: #fff;
+  border-bottom: var(--color-grey-ligth-2)
+}
+
+
+.content {
+  display: flex;
+}
+
+.sidebar {
+  background-color: var(--color-grey-dark-1);
+
+  // We don't want it to stretch (0), nor to shrink ()
+  flex: 0 0 18%;
+}
+
+.hotel-view {
+  background-color: #fff;
+
+  // element should grow as much as possible
+  flex: 1;
+}
