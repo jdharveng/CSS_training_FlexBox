@@ -1,35 +1,119 @@
 ///////////////////////////////////
 .logo {
   height: 3.25rem;
+  margin-left: 2rem;
 }
 ///////////////////////////////////
 .search {
-  &__input {
 
+  // we don't want it to grow, nor to shrink, but to occupy 40%
+  flex: 0 0 40%;
+
+  display: flex;
+  align-items: center; // centers the items along the CROSS AXIS
+  justify-content: center; // centers the items along the MAIN AXIS
+
+  &__input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background-color: var(--color-grey-light-2);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    // 90% of its container (=search)
+    width: 90%;
+    transition: all .2s;
+    margin-right: -3.5rem;
+
+    &:focus {
+      outline: none;
+      width: 100%;
+      background-color: var(--color-grey-light-2);
+    }
+
+    &::-webkit-input-placeholder {
+      font-weight: 100;
+      color: var(--color-grey-light-4);
+    }
   }
 
+  // give the sibling of the input (=button) the same color
+  &__input:focus + &__button {
+    background-color: var(--color-grey-light-3);
+  }
+
+
   &__button {
+    border: none;
+    background-color: var(--color-grey-light-2);
+
+    // Removing the focus
+    &:focus {
+      outline: none;
+    }
+
+    // when we click the button, we want it to move down
+    &:active {
+      transform: translateY(2px);
+    }
 
   }
 
   &__icon {
     height: 2rem;
     width: 2rem;
+    fill: var(--color-grey-dark-3);
 
   }
 }
 ///////////////////////////////////
 .user-nav {
-  &__icon-box {
 
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+
+  // to select all the DIRECT children
+  & > * {
+    padding: 0 2rem;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  & > *:hover {
+    background-color: var(--color-grey-light-2);
+  }
+
+
+  &__icon-box {
+    position: relative;
   }
 
   &__icon {
     height: 2.25rem;
     width: 2.25rem;
+    fill: var(--color-grey-dark-2);
+
   }
 
   &__notification {
+    font-size: .8rem;
+    height: 1.75rem;
+    width: 1.75rem;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: #fff;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
   }
 
@@ -40,12 +124,12 @@
   &__user-photo {
     height: 3.75rem;
     border-radius: 50%;
+    margin-right: 1rem;
   }
 
   &__user-name {
 
   }
-
 
 }
 ///////////////////////////////////
