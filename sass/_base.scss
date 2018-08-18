@@ -25,6 +25,11 @@
 
 }
 
+// SASS variables needed for the MEDIA QUERIES
+// breakpoints
+$bp-largest: 75em;    // 1200px  => 1200px/16px
+$bp-large: 68.75em;   // 1100px => 1100px/16px
+$bp-medium: 56.25em;  // 900px => 900px/16px
 
 // GLOBAL RESET
 * {
@@ -45,6 +50,10 @@ html {
   // Setting Global Font:
   font-size: 62.5%; // 1rem = 10px because browser default = 16 px
   // => 10/16px = 0.625
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 50%;  // 8px/16px
+  }
 }
 
 body {
